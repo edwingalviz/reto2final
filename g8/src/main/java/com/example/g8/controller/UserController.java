@@ -46,7 +46,7 @@ public class UserController {
     }
     
     //autenticacion al ingreso
-    @GetMapping("/emailexist/{email}/{password}")
+    @GetMapping("/{email}/{password}")
     public User findUserExistend(@PathVariable("email")String email,@PathVariable("password") String password){
         return service.findExistens(email, password);
     }
