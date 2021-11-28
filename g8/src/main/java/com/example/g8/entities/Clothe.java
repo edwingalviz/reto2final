@@ -26,7 +26,7 @@ public class Clothe{
     private String category;
     private String size;
     private String description;
-    private String availability;
+    private boolean availability;
     private Integer price;
     private Integer quantity;
     private String photography;  
