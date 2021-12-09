@@ -51,7 +51,7 @@ public class UserService {
                 usuarioConRegistro = x;   
             }
             else{
-                User usuarioSinRegistro1 = new User(null,null, null, null, null, null, null, null, null);
+                User usuarioSinRegistro1 = new User(null,null, null, null, null, null,null,null, null, null, null);
                 usuarioSinRegistro = usuarioSinRegistro1;
                 
             }   
@@ -85,6 +85,12 @@ public class UserService {
             if(resultado.isPresent()){
                 if(UserEdit.getName()!=null){
                     resultado.get().setName(UserEdit.getName());
+                }
+                if(UserEdit.getBirthtDay()!=null){
+                    resultado.get().setBirthtDay(UserEdit.getBirthtDay());
+                }
+                if(UserEdit.getMonthBirthtDay()!=null){
+                    resultado.get().setMonthBirthtDay(UserEdit.getMonthBirthtDay());
                 }
                 if(UserEdit.getEmail()!=null){
                     resultado.get().setEmail(UserEdit.getEmail());

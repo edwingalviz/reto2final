@@ -8,6 +8,7 @@ package com.example.g8.controller;
 import com.example.g8.entities.Clothe;
 import com.example.g8.services.ClotheService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -38,6 +39,10 @@ public class ClothesController {
         return service.getAllClothe();
     }
     
+    @GetMapping("/{reference}")
+    public Optional<Clothe> getZone(@PathVariable("id")String id){
+        return service.getClotheReference(id);
+    }
     
     
     @PostMapping("/new")
