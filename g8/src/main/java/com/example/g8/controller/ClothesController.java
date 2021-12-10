@@ -40,7 +40,7 @@ public class ClothesController {
     }
     
     @GetMapping("/{reference}")
-    public Optional<Clothe> getZone(@PathVariable("id")String id){
+    public Optional<Clothe> getZone(@PathVariable("reference")String id){
         return service.getClotheReference(id);
     }
     

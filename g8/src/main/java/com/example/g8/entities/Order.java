@@ -30,7 +30,7 @@ public class Order {
     private Integer id;
     private Date registerDay;
     private String status;
-    private User salesman;
+    private User salesMan;
     private Map<String, Clothe> products;
     private Map<String, Integer> quantities;
     

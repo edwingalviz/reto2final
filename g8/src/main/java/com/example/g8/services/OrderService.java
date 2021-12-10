@@ -48,8 +48,8 @@ public class OrderService {
                 if(orderEdit.getStatus()!=null){
                     resultado.get().setStatus(orderEdit.getStatus());
                 }
-                if(orderEdit.getSalesman()!=null){
-                    resultado.get().setSalesman(orderEdit.getSalesman());
+                if(orderEdit.getSalesMan()!=null){
+                    resultado.get().setSalesMan(orderEdit.getSalesMan());
                 }
                 if(orderEdit.getRegisterDay()!=null){
                     resultado.get().setRegisterDay(orderEdit.getRegisterDay());
