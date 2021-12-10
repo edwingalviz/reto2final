@@ -43,8 +43,8 @@ public class ClotheService {
         if(clotheEdit.getReference()!=null){
             Optional<Clothe> resultado = repository.getClotheReference(clotheEdit.getReference());
             if(resultado.isPresent()){
-                if(clotheEdit.getAvailability()!=null){
-                    resultado.get().setAvailability(clotheEdit.getAvailability());
+                if(clotheEdit.isAvailability()){
+                    resultado.get().setAvailability(clotheEdit.isAvailability());
                 }
                 if(clotheEdit.getCategory()!=null){
                     resultado.get().setCategory(clotheEdit.getCategory());
@@ -55,7 +55,7 @@ public class ClotheService {
                 if(clotheEdit.getPhotography()!=null){
                     resultado.get().setPhotography(clotheEdit.getPhotography());
                 }
-                if(clotheEdit.getPrice()!=null){
+                if(clotheEdit.getPrice()!= null){
                     resultado.get().setPrice(clotheEdit.getPrice());
                 }
                 if(clotheEdit.getQuantity()!=null){

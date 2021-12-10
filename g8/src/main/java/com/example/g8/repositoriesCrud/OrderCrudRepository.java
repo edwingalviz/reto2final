@@ -6,6 +6,7 @@
 package com.example.g8.repositoriesCrud;
 
 import com.example.g8.entities.Order;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -23,7 +24,7 @@ import org.springframework.data.mongodb.repository.Query;
 public interface OrderCrudRepository extends MongoRepository<Order,Integer>{
     
     @Query("{'salesMan.zone': ?0}")
-    Optional<Order> findByZone(String zone);
+    List<Order> findByZone(final String zone);
     
 }
 /*public interface OrderCrudRepository extends MongoRepository<Order, Integer> {

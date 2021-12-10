@@ -30,7 +30,7 @@ public class OrderRepository {
     public List<Order> getAll(){
         return(List<Order>)repository.findAll();
     }
-    public Optional<Order> getZone(String zone){
+    public List<Order> getZone(String zone){
         return repository.findByZone(zone);
     }
     

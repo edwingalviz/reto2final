@@ -43,8 +43,8 @@ public class OrderController {
     public Optional<Order> getZone(@PathVariable("id")Integer id){
         return service.getId(id);
     }
-    @GetMapping("zona/{zone}")
-    public Optional<Order> getZone(@PathVariable("zone") String zona){
+    @GetMapping("/zona/{zone}")
+    public List<Order> getZone(@PathVariable("zone") String zona){
         return service.getZone(zona);
     }
     

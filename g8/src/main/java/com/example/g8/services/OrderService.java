@@ -28,7 +28,7 @@ public class OrderService {
     public List<Order> getAll(){
         return repository.getAll();
     }
-    public Optional<Order> getZone(String zona){
+    public List<Order> getZone(String zona){
         return repository.getZone(zona);
     }
     public Optional<Order> getId(Integer id){
