@@ -7,6 +7,7 @@ package com.example.g8.services;
 
 import com.example.g8.entities.Order;
 import com.example.g8.repositories.OrderRepository;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -39,15 +40,24 @@ public class OrderService {
         return repository.getIdSalesMan(id);
     }
     public List<Order> getStatus(String status, Integer id){
-        List <Order> ListaSalesman = repository.getIdSalesMan(id);
-        List <Order> ListaStatus = null;
-        for(Order x : ListaSalesman){
-            if(x.getStatus().equals(status)){
-                ListaStatus.add(x);
-            }
+        
+        List <Order> ListaStatus = repository.getIdSalesMan(id);
+        List <Order>al = new ArrayList<Order>();
+        List <Order> ListaStatusFinal = null;
+        for(Order x : ListaStatus){
+            
+                al.add(x);
             
         }
-        return ListaStatus;
+        return al;
+        /*List <Order> ListaStatus = repository.getStatus(status);
+        List <Order> ListaStatusFinal = null;
+        for(Order x : ListaStatus){
+            if(x.getSalesMan().getId()==id){
+                ListaStatusFinal.add(x);
+            }
+        }
+        return ListaStatusFinal;*/
     }
     public List<Order> getFecha(Integer id, Date fecha ){
         List <Order> ListaSalesman = repository.getIdSalesMan(id);

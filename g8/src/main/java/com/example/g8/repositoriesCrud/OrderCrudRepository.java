@@ -36,6 +36,8 @@ public interface OrderCrudRepository extends MongoRepository<Order,Integer>{
     @Query("{registerDay: ?0}")
     List<Order> findByRegisterDay(final Date fecha);
     
+    
+    
 }
 /*public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
     
