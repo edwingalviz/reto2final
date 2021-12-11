@@ -7,6 +7,7 @@ package com.example.g8.controller;
 
 import com.example.g8.entities.Order;
 import com.example.g8.services.OrderService;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,19 @@ public class OrderController {
     public List<Order> getZone(@PathVariable("zone") String zona){
         return service.getZone(zona);
     }
+    @GetMapping("/salesMan/{id}")
+    public List<Order> getSalesMan(@PathVariable("id") Integer id){
+        return service.getSalesMan(id);
+    }
+    @GetMapping("/state/{status}/{id}")
+    public List<Order> getStatus(@PathVariable("id") Integer id,@PathVariable("status") String status){
+        return service.getStatus(status, id);
+    }
+    @GetMapping("/date/{registerDay}/{id}")
+    public List<Order> getStatus(@PathVariable("id") Integer id,@PathVariable("registerDay") Date fecha){
+        return service.getFecha(id, fecha);
+    }
+    
     
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)

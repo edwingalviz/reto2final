@@ -6,6 +6,7 @@
 package com.example.g8.repositoriesCrud;
 
 import com.example.g8.entities.Order;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -25,6 +26,15 @@ public interface OrderCrudRepository extends MongoRepository<Order,Integer>{
     
     @Query("{'salesMan.zone': ?0}")
     List<Order> findByZone(final String zone);
+    
+    @Query("{'salesMan.id': ?0}")
+    List<Order> findBySalesMan(final Integer id);
+    
+    @Query("{status: ?0}")
+    List<Order> findByStatus(final String status);
+    
+    @Query("{registerDay: ?0}")
+    List<Order> findByRegisterDay(final Date fecha);
     
 }
 /*public interface OrderCrudRepository extends MongoRepository<Order, Integer> {

@@ -7,6 +7,7 @@ package com.example.g8.services;
 
 import com.example.g8.entities.Order;
 import com.example.g8.repositories.OrderRepository;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,32 @@ public class OrderService {
     public Optional<Order> getId(Integer id){
         return repository.getById(id);
     }
+    public List<Order> getSalesMan(Integer id){
+        return repository.getIdSalesMan(id);
+    }
+    public List<Order> getStatus(String status, Integer id){
+        List <Order> ListaSalesman = repository.getIdSalesMan(id);
+        List <Order> ListaStatus = null;
+        for(Order x : ListaSalesman){
+            if(x.getStatus().equals(status)){
+                ListaStatus.add(x);
+            }
+            
+        }
+        return ListaStatus;
+    }
+    public List<Order> getFecha(Integer id, Date fecha ){
+        List <Order> ListaSalesman = repository.getIdSalesMan(id);
+         List <Order> ListaFechas = null;
+          for(Order x : ListaSalesman){
+            if(x.getRegisterDay().equals(fecha)){
+                ListaFechas.add(x);
+            }
+            
+        }
+        return ListaFechas;
+    }
+        
     public Order createOrder(Order order){
         return repository.createOrder(order);
     }
