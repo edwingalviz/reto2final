@@ -31,7 +31,7 @@ public class UserService {
         return repository.getUser(id);
     }
     
-    public Optional<User> findMount(String mount){
+    public List<User> findMount(String mount){
         return repository.getMount(mount);
     }
     

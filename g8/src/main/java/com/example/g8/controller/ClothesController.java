@@ -44,7 +44,7 @@ public class ClothesController {
         return service.getClotheReference(id);
     }
     @GetMapping("/price/{price}")
-    public Optional<Clothe> getZone(@PathVariable("price")Float price){
+    public List<Clothe> getPrice(@PathVariable("price")Float price){
         return service.getClothePrice(price);
     }
     

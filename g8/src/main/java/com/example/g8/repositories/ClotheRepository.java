@@ -34,7 +34,7 @@ public class ClotheRepository{
         return repository.findByReference(reference);
     }
     
-     public Optional<Clothe> getClothePrice(Float price){
+     public List<Clothe> getClothePrice(Float price){
         return repository.findByPrice(price);
     }
     

@@ -6,6 +6,7 @@
 package com.example.g8.repositoriesCrud;
 
 import com.example.g8.entities.User;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -17,6 +18,6 @@ import org.springframework.data.mongodb.repository.Query;
 public interface UserCrudRepository extends MongoRepository<User,Integer>{
     
     @Query("{monthBirthtDay: ?0}")
-    Optional <User> getMountBrithDay(String mount);
+    List<User> getMountBrithDay(String mount);
     
 }

@@ -57,7 +57,7 @@ public class UserController {
     }
     
     @GetMapping("/birthday/{monthBirthtDay}")
-    public Optional <User> findMount(@PathVariable("monthBirthtDay")String mount){
+    public List<User> findMount(@PathVariable("monthBirthtDay")String mount){
         return service.findMount(mount);
     }
     

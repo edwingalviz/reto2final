@@ -31,7 +31,7 @@ public class ClotheService {
         return repository.getClotheId(id);
     }
     
-    public Optional<Clothe> getClothePrice(Float price){
+    public List<Clothe> getClothePrice(Float price){
         return repository.getClothePrice(price);
     }
     
