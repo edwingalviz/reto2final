@@ -43,6 +43,15 @@ public class ClothesController {
     public Optional<Clothe> getZone(@PathVariable("reference")String id){
         return service.getClotheReference(id);
     }
+    @GetMapping("/price/{price}")
+    public Optional<Clothe> getZone(@PathVariable("price")Float price){
+        return service.getClothePrice(price);
+    }
+    
+    @GetMapping("/description/{description}")
+    public List<Clothe> getDescription(@PathVariable("description")String descriptian){
+        return service.getCDescription(descriptian);
+    }
     
     
     @PostMapping("/new")

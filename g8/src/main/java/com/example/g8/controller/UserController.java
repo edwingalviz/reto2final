@@ -56,6 +56,11 @@ public class UserController {
         return service.findExistens(email, password);
     }
     
+    @GetMapping("/birthday/{monthBirthtDay}")
+    public Optional <User> findMount(@PathVariable("monthBirthtDay")String mount){
+        return service.findMount(mount);
+    }
+    
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User addUser(@RequestBody User user){

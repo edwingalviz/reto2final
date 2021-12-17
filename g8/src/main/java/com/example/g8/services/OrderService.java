@@ -61,7 +61,7 @@ public class OrderService {
     }
     public List<Order> getFecha(Integer id, Date fecha ){
         List <Order> ListaSalesman = repository.getIdSalesMan(id);
-         List <Order> ListaFechas = null;
+        List <Order>ListaFechas = new ArrayList<Order>();
           for(Order x : ListaSalesman){
             if(x.getRegisterDay().equals(fecha)){
                 ListaFechas.add(x);

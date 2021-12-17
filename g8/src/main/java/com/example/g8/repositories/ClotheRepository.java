@@ -34,6 +34,14 @@ public class ClotheRepository{
         return repository.findByReference(reference);
     }
     
+     public Optional<Clothe> getClothePrice(Float price){
+        return repository.findByPrice(price);
+    }
+    
+    public Optional<Clothe> getDescription(String description){
+        return repository.findByDescription(description);
+    }
+    
     public Optional<Clothe> getClotheId(Integer id){
         return repository.findById(id);
     }

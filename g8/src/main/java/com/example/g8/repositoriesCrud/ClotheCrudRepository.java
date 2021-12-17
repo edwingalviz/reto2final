@@ -17,4 +17,9 @@ public interface ClotheCrudRepository extends MongoRepository<Clothe,Integer>{
     
     Optional<Clothe> findByReference(String reference);
     
+    
+     Optional<Clothe> findByPrice(Float price);
+     
+     Optional<Clothe> findByDescription(String description);
+    
 }

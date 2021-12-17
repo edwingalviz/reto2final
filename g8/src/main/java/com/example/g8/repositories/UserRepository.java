@@ -30,6 +30,10 @@ public class UserRepository {
         return repository.findById(id);
     }
     
+    public Optional<User> getMount(String mount){
+        return repository.getMountBrithDay(mount);
+    }
+    
     public User save(User user){
         
         return repository.save(user);

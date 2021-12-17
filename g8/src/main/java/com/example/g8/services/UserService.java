@@ -25,8 +25,14 @@ public class UserService {
     public List<User>getAll(){
         return repository.getAll();
     }
+    
+   
     public Optional<User> findID(Integer id){
         return repository.getUser(id);
+    }
+    
+    public Optional<User> findMount(String mount){
+        return repository.getMount(mount);
     }
     
     public boolean findAdress(String email){

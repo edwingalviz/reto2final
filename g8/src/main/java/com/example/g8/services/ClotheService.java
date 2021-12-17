@@ -7,6 +7,7 @@ package com.example.g8.services;
 
 import com.example.g8.entities.Clothe;
 import com.example.g8.repositories.ClotheRepository;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,22 @@ public class ClotheService {
         return repository.getClotheId(id);
     }
     
+    public Optional<Clothe> getClothePrice(Float price){
+        return repository.getClothePrice(price);
+    }
+    
     public Optional<Clothe> getClotheReference(String reference){
         return repository.getClotheReference(reference);
+    }
+    
+    public List<Clothe> getCDescription(String description){
+        List <Clothe>ListaFechas = new ArrayList<Clothe>();
+        for(Clothe x: repository.getAllClothe()){
+            if(x.getDescription().toLowerCase().contains(description)){
+                ListaFechas.add(x);
+            }
+        }
+        return ListaFechas;
     }
     
     
